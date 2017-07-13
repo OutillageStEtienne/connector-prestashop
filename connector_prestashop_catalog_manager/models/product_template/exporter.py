@@ -270,21 +270,21 @@ class ProductTemplateExportMapper(TranslationPrestashopExportMapper):
             if ps_image_id:
                 return {'id_default_image': ps_image_id}
 
-    @mapping
-    def extras_manufacturer(self, record):
-        mapper = self.unit_for(ManufacturerExportMapper)
-        return mapper.map_record(record).values(**self.options)
-
-
-@prestashop
-class ManufacturerExportMapper(TranslationPrestashopExportMapper):
-    # To extend in connector_prestashop_manufacturer module
-    _model_name = 'prestashop.product.template'
-
-    _translatable_fields = [
-        ('name', 'name'),
-    ]
-
-    @mapping
-    def manufacturer(self, record):
-        return {}
+#     @mapping
+#     def extras_manufacturer(self, record):
+#         mapper = self.unit_for(ManufacturerExportMapper)
+#         return mapper.map_record(record).values(**self.options)
+#
+#
+# @prestashop
+# class ManufacturerExportMapper(TranslationPrestashopExportMapper):
+#     # To extend in connector_prestashop_manufacturer module
+#     _model_name = 'prestashop.product.template'
+#
+#     _translatable_fields = [
+#         ('name', 'name'),
+#     ]
+#
+#     @mapping
+#     def manufacturer(self, record):
+#         return {}
